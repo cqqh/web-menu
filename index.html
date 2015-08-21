@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>First Bootstrap Template</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+
+</style>
+<body>
+<div class="clearfix pull-left">
+    <div class="list-group">
+        <a href="#" class="list-group-item active">推荐</a>
+        <a href="#" class="list-group-item"><span class="badge">1</span>主菜</a>
+        <a href="#" class="list-group-item"><span class="badge">2</span>酒水饮料</a>
+        <a href="#" class="list-group-item"><span class="badge"></span>寿司</a>
+        <a href="#" class="list-group-item">刺身</a>
+    </div>
+    <div class="caidan pull-left">
+
+    </div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+    $(function(){
+        $('.list-group-item').click(function(){
+            $('.list-group-item').removeClass('active');
+            $(this).addClass('active');
+        });
+    });
+</script>
+</body>
+</html>
