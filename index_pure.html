@@ -155,7 +155,7 @@
 
     $(".item-console a.remove-food").click(function(){
         var node = $(this).parent().parent();
-        var count = node.find(".item-count").text();
+        var count = Number(node.find(".item-count").text());
         console.log(node.data("id"));
         node.find(".item-count").html(count - 1);
     });
