@@ -29,8 +29,15 @@
             margin: 0;
         }
 
+        #main{
+
+        }
         #main>div {
+            transition: all .2s linear;
             display: none;
+        }
+        .item-info>div{
+            margin: 10px;
         }
     </style>
 </head>
@@ -41,17 +48,85 @@
             <a class="pure-menu-heading" href="#">Company</a>
 
             <ul class="pure-menu-list">
-                <li class="pure-menu-item pure-menu-active"><a href="#recommend" class="pure-menu-link">推荐</a></li>
-                <li class="pure-menu-item"><a href="#main" class="pure-menu-link">主菜</a></li>
-                <li class="pure-menu-item"><a href="#drink" class="pure-menu-link">酒水饮料</a></li>
-                <li class="pure-menu-item"><a href="#shousi" class="pure-menu-link">寿司</a></li>
-                <li class="pure-menu-item"><a href="#cishen" class="pure-menu-link">刺身</a></li>
+                <li class="pure-menu-item pure-menu-active recommend"><a href="#recommend" class="pure-menu-link">推荐</a></li>
+                <li class="pure-menu-item main"><a href="#main" class="pure-menu-link">主菜</a></li>
+                <li class="pure-menu-item drink"><a href="#drink" class="pure-menu-link">酒水饮料</a></li>
+                <li class="pure-menu-item shousi"><a href="#shousi" class="pure-menu-link">寿司</a></li>
+                <li class="pure-menu-item cishen"><a href="#cishen" class="pure-menu-link">刺身</a></li>
             </ul>
         </div>
     </div>
     <div id="main">
-        <div class="recommend" style="display: block">recommend</div>
-        <div class="main">main</div>
+        <div class="recommend" style="display: block;">
+            <div class="f-cb item-info" data-id="123" data-price="98">
+                <div class="f-fl">img</div>
+                <div class="f-fl">title</div>
+                <div class="f-fr f-cb item-console"><a class="remove-food">-</a> <span class="item-count">0</span> <a class="add-food">+</a></div>
+                <div class="f-fr">price</div>
+            </div>
+            <div class="f-cb item-info" data-id="122" data-price="98">
+                <div class="f-fl">img</div>
+                <div class="f-fl">title</div>
+                <div class="f-fr f-cb item-console"><a class="remove-food">-</a> <span class="item-count">0</span> <a class="add-food">+</a></div>
+                <div class="f-fr">price</div>
+            </div>
+            <div class="f-cb item-info" data-id="125" data-price="8">
+                <div class="f-fl">img</div>
+                <div class="f-fl">title</div>
+                <div class="f-fr f-cb item-console"><a class="remove-food">-</a> <span class="item-count">0</span> <a class="add-food">+</a></div>
+                <div class="f-fr">price</div>
+            </div>
+            <div class="f-cb item-info">
+                <div class="f-fl">img</div>
+                <div class="f-fl">title</div>
+                <div class="f-fr f-cb item-console"><a class="remove-food">-</a> <span class="item-count">0</span> <a class="add-food">+</a></div>
+                <div class="f-fr">price</div>
+            </div>
+            <div class="f-cb item-info">
+                <div class="f-fl">img</div>
+                <div class="f-fl">title</div>
+                <div class="f-fr f-cb item-console"><a class="remove-food">-</a> <span class="item-count">0</span> <a class="add-food">+</a></div>
+                <div class="f-fr">price</div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="f-cb item-info">
+                <div class="f-fl">img</div>
+                <div class="f-fl">title</div>
+                <div class="f-fr f-cb item-console"><a>-</a> <span>0</span> <a>+</a></div>
+                <div class="f-fr">price</div>
+            </div>
+            <div class="f-cb item-info">
+                <div class="f-fl">img</div>
+                <div class="f-fl">title</div>
+                <div class="f-fr f-cb item-console"><a>-</a> <span>0</span> <a>+</a></div>
+                <div class="f-fr">price</div>
+            </div>
+            <div class="f-cb item-info">
+                <div class="f-fl">img</div>
+                <div class="f-fl">title</div>
+                <div class="f-fr f-cb item-console"><a>-</a> <span>0</span> <a>+</a></div>
+                <div class="f-fr">price</div>
+            </div>
+            <div class="f-cb item-info">
+                <div class="f-fl">img</div>
+                <div class="f-fl">title</div>
+                <div class="f-fr f-cb item-console"><a>-</a> <span>0</span> <a>+</a></div>
+                <div class="f-fr">price</div>
+            </div>
+            <div class="f-cb item-info">
+                <div class="f-fl">img</div>
+                <div class="f-fl">title</div>
+                <div class="f-fr f-cb item-console"><a>-</a> <span>0</span> <a>+</a></div>
+                <div class="f-fr">price</div>
+            </div>
+            <div class="f-cb item-info">
+                <div class="f-fl">img</div>
+                <div class="f-fl">title</div>
+                <div class="f-fr f-cb item-console"><a>-</a> <span>0</span> <a>+</a></div>
+                <div class="f-fr">price</div>
+            </div>
+        </div>
         <div class="drink">drink</div>
         <div class="shousi">shousi</div>
         <div class="cishen">cishen</div>
@@ -61,18 +136,36 @@
 <script src="js/jquery.js"></script>
 <script>
     $(function(){
-        $(".pure-menu-item").click(function(){
-            $(".pure-menu-item").removeClass("pure-menu-active");
-            $(this).addClass("pure-menu-active");
-        });
+//        $(".pure-menu-item").click(function(){
+//            $(".pure-menu-item").removeClass("pure-menu-active");
+//            $(this).addClass("pure-menu-active");
+//        });
     });
 
-    window.onhashchange=function(){
+    window.addEventListener("hashchange", function(){
         var hash = location.hash.substr(1);
         if(hash == '') return;
+
         $("#main > div").css('display', 'none');
         $("#main > ."+hash).css('display', 'block');
-    };
+
+        $(".pure-menu-item").removeClass("pure-menu-active");
+        $(".pure-menu-item."+hash).addClass("pure-menu-active");
+    });
+
+    $(".item-console a.remove-food").click(function(){
+        var node = $(this).parent().parent();
+        var count = node.find(".item-count").text();
+        console.log(node.data("id"));
+        node.find(".item-count").html(count - 1);
+    });
+
+    $(".item-console a.add-food").click(function(){
+        var node = $(this).parent().parent();
+        var count = Number(node.find(".item-count").text());
+        console.log(node.data("id"));
+        node.find(".item-count").html(count + 1);
+    });
 </script>
 </body>
 </html>
