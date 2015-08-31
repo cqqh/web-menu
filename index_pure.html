@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your page title</title>
+    <link rel="stylesheet" href="./css/pure.css">
+
+    <style>
+        #layout {
+            position: relative;
+            padding-left: 150px;
+            left: 0;
+        }
+        #menu {
+            width: 150px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 1000; /* so the menu or its navicon stays above all content */
+            background: #191818;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        #menu .pure-menu-heading {
+            font-size: 110%;
+            color: #fff;
+            margin: 0;
+        }
+
+        #main>div {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="layout">
+    <div id="menu">
+        <div class="pure-menu">
+            <a class="pure-menu-heading" href="#">Company</a>
+
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item pure-menu-active"><a href="#recommend" class="pure-menu-link">推荐</a></li>
+                <li class="pure-menu-item"><a href="#main" class="pure-menu-link">主菜</a></li>
+                <li class="pure-menu-item"><a href="#drink" class="pure-menu-link">酒水饮料</a></li>
+                <li class="pure-menu-item"><a href="#shousi" class="pure-menu-link">寿司</a></li>
+                <li class="pure-menu-item"><a href="#cishen" class="pure-menu-link">刺身</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="main">
+        <div class="recommend" style="display: block">recommend</div>
+        <div class="main">main</div>
+        <div class="drink">drink</div>
+        <div class="shousi">shousi</div>
+        <div class="cishen">cishen</div>
+    </div>
+</div>
+
+<script src="js/jquery.js"></script>
+<script>
+    $(function(){
+        $(".pure-menu-item").click(function(){
+            $(".pure-menu-item").removeClass("pure-menu-active");
+            $(this).addClass("pure-menu-active");
+        });
+    });
+
+    window.onhashchange=function(){
+        var hash = location.hash.substr(1);
+        if(hash == '') return;
+        $("#main > div").css('display', 'none');
+        $("#main > ."+hash).css('display', 'block');
+    };
+</script>
+</body>
+</html>
