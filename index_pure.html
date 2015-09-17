@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your page title</title>
     <link rel="stylesheet" href="./css/pure.css">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <style>
         #layout {
             position: relative;
@@ -18,7 +18,7 @@
             top: 0;
             left: 0;
             bottom: 0;
-            z-index: 1000; /* so the menu or its navicon stays above all content */
+            /* z-index: 1000;  so the menu or its navicon stays above all content */
             background: #191818;
             overflow-y: auto;
             -webkit-overflow-scrolling: touch;
@@ -38,6 +38,25 @@
         }
         .item-info>div{
             margin: 10px;
+        }
+
+        #cart {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 50px;
+            background-color: rgba(255,254,253,0.9);
+            border-top: 1px solid #cacaca;
+        }
+
+        #cart .cart-btns{
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+        }
+        #cart .cart-btns button{
+            margin: 8px;
         }
     </style>
 </head>
@@ -132,6 +151,18 @@
         <div class="cishen">cishen</div>
     </div>
 </div>
+<div id="cart">
+    <form>
+
+    </form>
+
+    <div class="cart-btns">
+        <button class="pure-button pure-button-primary">
+            <i class="fa fa-shopping-cart"></i> 下单
+        </button>
+    </div>
+
+</div>
 
 <script src="js/jquery.js"></script>
 <script>
@@ -156,15 +187,32 @@
     $(".item-console a.remove-food").click(function(){
         var node = $(this).parent().parent();
         var count = Number(node.find(".item-count").text());
+        var id = node.data("id");
         console.log(node.data("id"));
-        node.find(".item-count").html(count - 1);
+        if(count <= 0){
+            node.find(".item-count").html(0);
+        }else{
+            node.find(".item-count").html(count - 1);
+
+            if(document.getElementById(id)){
+                $("#cart > form > #"+id).val(count - 1);
+            }
+        }
+
     });
 
     $(".item-console a.add-food").click(function(){
         var node = $(this).parent().parent();
         var count = Number(node.find(".item-count").text());
+        var id = node.data("id");
         console.log(node.data("id"));
         node.find(".item-count").html(count + 1);
+
+        if(document.getElementById(id)){
+            $("#cart > form > #"+id).val(count + 1);
+        }else{
+            $("#cart > form").append($("<input type='hidden' value=1 name='"+id+"' id='"+id+"'>"));
+        }
     });
 </script>
 </body>
